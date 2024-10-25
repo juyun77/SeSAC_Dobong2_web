@@ -1,0 +1,118 @@
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>태그 사용해보기!</title>
+</head>
+<body>
+    <!-- alt+shift+방향키 누르면 자동으로 복사됨 -->
+     <!-- h1 태그는 html 문서의 제목을 담당하기 때문에 하나만 써주는걸 권장한다. -->
+    <h1>안녕하세요 h1 입니다. </h1>
+    <h2>안녕하세요 h2 입니다. </h2>
+    <h3>안녕하세요 h3 입니다. </h3>
+    <h4>안녕하세요 h4 입니다. </h4>
+    <h5>안녕하세요 h5 입니다. </h5>
+    <h6>안녕하세요 h6 입니다. </h6>
+
+    <p> 오늘은 날씨가 좋습니다. 첫번째 수업인.. 재미있군요! <br/> </p>
+    <hr/>
+
+    <!-- 순서가 있는 리스트와 순서가 없는 리스트 -->
+    <h3>아이스라떼 만드는 법</h3> 
+    <!-- ol type 1(default), a, A, i, I -->
+    <ol type="i">
+        <li><b>우유</b>를 <strong>컵</strong>에 넣습니다.</li>
+        <li><i>얼음</i>을 넣습니다.</li>
+        <li><em>에스프레소 샷</em>을 넣습니다.</li>
+     </ol>
+
+     <h3>오늘의 할 일</h3>
+     <!-- ul type disc(default), circle, square  -->
+     <ul type="disc">
+        <li><u>html</u> 공부하기 </li>
+        <li>운동하기</li>
+        <li><del>맛있는</del> 점심 먹기.</li>
+     </ul>
+
+     <!-- 리스트 중첩해보기! -->
+      <ul>
+        <h3>내가 좋아하는 음식</h3>
+        <li>양식
+            <ul type="circle">
+                <li>스테이크</li>
+                <li>스테이크</li> 
+            </ul>
+        </li>
+        <li>일식
+            <ul type="circle">
+                <li>돈가스</li>
+                <li>라멘</li>
+            </ul>
+        </li>
+      </ul>
+
+      <p>안녕하세요.   .</p>
+      <!-- pre태그는 띄어쓰기가 적용된다. -->
+      <pre>안녕하세요 .        .</pre>
+
+      <details>
+        <summary> summary에는 제목을 쓰면 돼요. </summary>
+        <div>
+            <!-- lorem vscode에서 긴 문장을 제공 lorem15: 15글자 문장 제공-->
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi cupiditate explicabo qui culpa dolores adipisci!
+        </div>
+      </details>
+
+      <!-- 슬랙에 '''이거 3개 쓰면 코드블럭 나옴 -->
+      <h1> 스타벅스 </h1>
+      
+      <ul>
+
+        <li> <h2>아이스 아메리카노</h2>
+        <ol>
+            <li>R:3000원</li>
+            <li>L:4000원</li>
+        </ol>
+    </li>
+        <li> <h2>카페 라떼</h2>
+        <ol>
+            <li>R:3000원</li>
+            <li>L:4000원</li>
+        </ol>
+    </li>
+        <li> <h2>초코 라떼</h2>
+        <ol>
+            <li>R:3000원</li>
+            <li>L:4000원</li>
+        </ol>
+    </li>
+      </ul>
+      <hr>
+      <h2>음료 설명</h2>
+      <p>아메리카노는 물에 에스프레소 샷을 한 음료.</p>
+      <p> 카페라떼는 우유에 에스프레소 샷을 탄 음료</p>
+      <p> 초코라떼는 우유에 초코시럽을 탄 음료</p>
+</body>
+</html>
+
+<hr>
+<h2>img 태그</h2>
+<!-- img 태그는 필수속성: src, alt  -->
+<!-- 인터넷에서 사진 우클릭 이미지주소복사 -->
+  <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA4MjJfMjc1%2FMDAxNzI0MzA3NDczODMz.TXUYvi5CTIy2GE8MRgXXOdtPe45FC2ffs853pP72t_kg.GMqFzBpIWioNfKudHl9UQUCvnBvmLbRrjuwVFDqvY7sg.JPEG%2Foutput_3249300402.jpg&type=a340" 
+  alt="짜파게티 사진" width="100" height="100" />
+  <!-- 절대경로, /의 의미가 매번 달라질 수 있음  -->
+  <img src="/01_html/image/poo.jpg" alt="푸 사진" width="100" height="100">
+  <!-- 상대경로, .이 자신이 있는 위치를 가리킴  -->
+  <img src="./image/poo.jpg" alt="푸 사진" width="100" height="100">
+<br/>
+<br/>
+<!-- a태그 필수 속성: href -->
+ <!-- target _self(기본값), _blank: 새 페이지 -->
+ <a href="http://naver.com" target="_blank">네이버로 이동</a><br/>
+ <a href="./start.html" target="_self">start.html로 이동</a><br/>
+ <a href="http://www.google.com" target="_blank"> <img src="./image/poo.jpg" alt="푸 사진" width="100" height="100"> </a>
+  

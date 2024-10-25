@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 실습2  -->
+    <h3>설문 조사</h3>
+
+    <label for="name">이름</label>
+    <input type="text" id="name">
+    <br />
+    <label for="emailId">이메일</label>
+    <input type="email" id="emailId" placeholder="love@example.com">
+    <br /><br />
+
+    <h4>나이</h4>
+    <label>
+        <input type="radio" name="age" checked />
+        10대
+    </label>
+    <label>
+        <input type="radio" name="age" />
+        20대
+    </label>
+    <label>
+        <input type="radio" name="age" />
+        30대
+    </label>
+    <label>
+        <input type="radio" name="age" />
+        40대
+    </label>
+    <label>
+        <input type="radio" name="age" />
+        50대
+    </label>
+    <label>
+        <input type="radio" name="age" />
+        60대 이상
+    </label>
+
+    <h4>원하는 강의(복수응답가능합니다.)</h4>
+    <label>
+        <input type="checkbox" name="lecture" checked />
+        html
+    </label>
+    <label>
+        <input type="checkbox" name="lecture" />
+        javascript
+    </label>
+    <label>
+        <input type="checkbox" name="lecture" />
+        css
+    </label>
+
+    <br /><br />
+
+    <textarea cols="30" rows="10" placeholder="하고 싶은 말을 써주세요!ㅎㅎ"></textarea>
+    <input type="submit" value="제출" />
+    <br /><br /><br /><br />
+    <!-- 실습3-1 -->
+    <table border="1" cellspacing="0" cellpadding="10" width="100">
+        <tr>
+            <th colspan="2">1</th>
+            <th rowspan="2">2</th>
+        </tr>
+        <tr>
+            <td rowspan="2">3</td>
+            <td>center</td>
+        </tr>
+        <tr>
+            <td colspan="2">4</td>
+        </tr>
+    </table>
+
+    <br /><br /><br /><br />
+    <!-- 실습 3-2 -->
+    <table border="1" cellspacing="0" cellpadding="10">
+        <!-- 제목에 해당 -->
+        <tr>
+            <th>구분</th>
+            <th>음료</th>
+            <th>가격</th>
+            <th>이미지</th>
+        </tr>
+        <tr>
+            <td rowspan="2">커피류</td>
+            <td>아메리카노</td>
+            <td>4200원</td>
+            <td><a href="http://www.starbucks.co.kr"><img src="./image/americano.jpg" alt="아이스 아메리카노" width="100"></a></td>
+        </tr>
+        <tr>
+            <td>돌체라떼</td>
+            <td>4000원</td>
+            <td><a href="http://www.starbucks.co.kr"><img src="./image/dolcelatte.jpg" alt="돌체라떼" width="100"></a></td>
+        </tr>
+        <tr>
+            <td rowspan="2">주스류</td>
+            <td>자바칩 프라푸치노</td>
+            <td rowspan="2">5000원</td>
+            <td><a href="http://www.starbucks.co.kr"><img src="./image/javaChip.jpg" alt="자바칩 프라푸치노" width="100"></a></td>
+        </tr>
+        <tr>
+            <td>녹차 프라푸치노</td>
+            <td><a href="http://www.starbucks.co.kr"><img src="./image/greenTea.jpg" alt="녹차 프라푸치노" width="100"></a></td>
+        </tr>
+    </table>
+
+
+</body>
+
+</html>
