@@ -38,3 +38,143 @@
     padding: 10px;
     margin: 10px;
 }
+
+/* 부모 */
+.parent{
+    width: 500px;
+    height: 250px;
+    background-color: red;
+}
+
+/* min은 최소 너비를 400px로 해놨기 때문에 400 밑으로 떨어지지 않는다. */
+.parent > .min{
+    min-width: 400px;
+    height: 100px;
+    background-color: orange;
+}
+
+/* max는 부모를 따라간다. */
+.parent > .max{
+    max-width: 400px;
+    height: 100px;
+    background-color: violet;
+}
+
+
+/* 단위 확인 */
+.box{
+    background-color: beige;
+    border: 1px solid black;
+}
+.box-px{
+    width: 50px;
+    height: 50px;
+}
+/* 브라우저 크기에 따른 화면 제어 */
+/* vw: 뷰포트 너비의 50% vh: 뷰포트 높이의 50% */
+/* 뷰포트는 body의 마진까지 포함한 것 뷰포트 > body */
+.box-view{
+    width: 50vw;
+    height: 50vh;
+}
+/* 부모의 너비의 %를 받아오는 것 */
+/* box-per의 부모는 body , body의 height가 지정되어있지 않다면 받아올 수 없다.*/
+.box-per{
+    width: 50%;
+    height: 50%;
+}
+/* html의 폰트사이즈가 1rem */
+.rem{
+    font-size: 2rem;
+}
+/* 부모의 폰트 사이즈가 1em */
+.em{
+    font-size: 2em;
+}
+
+.square{
+    width: 100px;
+    height: 100px;
+    border: 1px solid grey;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.border{
+    /* width, style, color 순으로 단축속성 작성 */
+    border: 1px solid black;
+    border-color: orange;
+    border-style: dotted;
+    border-width: 11px;
+    border-left: 1px dashed rgb(0, 255, 17);
+    border-top-style: solid;
+}
+
+.rounded{
+    border-radius: 10%;
+    /* 단축속성 */
+    /* border-radius: 5px 10px 20px 40px ; */
+    /* border-radius: 5px 20px 50px; */
+    /* border-radius: 5px 50px; */
+}
+
+.box-sizing{
+    border: 15px solid red;
+    padding: 20px;
+    background-color: yellow;  
+}
+/* content box는 요소의 내용(content)으로 크기 계산 */
+.content-box{
+    box-sizing: content-box;
+}
+/* 요소의 내용 + padding +border로 크기 계산 */
+/* border-box가 더 쉽기 때문에 권장*/
+.border-box{
+    box-sizing: border-box;
+}
+
+/* 속성도 없어지고 자리도 사라진다. */
+   .d-none {
+    display: none;
+    background-color: red;
+    }
+    /* 자리는 남는데 속성은 죽는다. */
+    .invisible {
+    visibility: hidden;
+    background-color: orangered;
+    }
+    .opacity-0 {
+    opacity: 0;
+    background-color: tomato;
+    }
+
+    .box-2{
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+    }
+
+    .d-none2:hover{
+        display: none;
+    }
+   
+.square > img[alt='pooh 사진']{
+    width: 200px;
+}
+.overflow-hidden{
+    overflow: hidden;
+}
+/* 만약 scroll이 생기길 원하면 scroll보다는 auto추천 */
+.overflow-auto{
+    overflow: auto;
+}
+.overflow-scroll{
+    overflow: scroll;
+}
+.overflow-visible{
+    overflow: visible;
+    /* overflow-x: hidden;
+    overflow-y: auto; */
+    /* 단축 속성 위와 동일하다. */
+    overflow: hidden auto; 
+}
