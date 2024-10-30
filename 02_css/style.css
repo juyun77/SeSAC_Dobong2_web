@@ -1,0 +1,22 @@
+/* import는 반드시 맨 위에 써야한다. */
+@import url('./import.css');
+
+p{
+    background-color: red;
+    color: white;
+}
+
+div{
+    background-color: yellow;
+}
+
+h3{
+
+    background-color: black;
+    color: white;
+}
+
+li{
+    color: pink;
+    background-color: blue;
+}
