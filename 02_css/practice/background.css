@@ -1,0 +1,27 @@
+.box{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: linear-gradient(#FFE600, #FF0080, #DB20DB);
+    z-index: 1;
+    position: absolute;
+    top: 50px;
+    left: 50px; 
+}
+
+.background-image{
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background-image: url('/02_css/img/pooh.png');
+    position: absolute;
+    top: 65px;
+    left: 65px;
+    z-index: 2;
+    border: 10px solid white;
+    background-color: pink;
+}
+
+        /* background-image: url('../img/instagram.png');
+    background-image: url('/02_css/img/instagram.png'); */
+/* } */

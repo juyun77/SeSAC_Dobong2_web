@@ -1,0 +1,62 @@
+.box{
+    display: inline-block;
+    width: 400px;
+    height: 800px;
+    border: 1px solid black;
+}
+
+.background{
+    background-color: aquamarine;
+    background: palegoldenrod;
+    /* color image repeat position/size ..  */
+    background: linear-gradient(90deg,black,white);
+}
+
+.background-image{
+    background-image: url('./img/small_img.png');
+    /* 1. background-repeat */
+    background-repeat: repeat;
+    background-repeat: repeat-x;
+    background-repeat: repeat-y;
+    background-repeat: no-repeat;  
+    /* 2. background-position */
+    background-position: top left;
+    background-position: center;
+    background-position: top center;
+    background-position: 100px;
+    background-position: 100px 10px; /*x축 y축 순서*/
+    /* 3. background-size */
+    background-size: auto;
+    /* size를 하나만 쓰면 가로너비 설정되고, 세로는 비율에 맞춰서 자동설정됨 */
+    background-size: 50px;
+    background-size: 100px 200px; /* x축 y축 순서 */
+    background-size: contain;
+    background-size: cover;
+    /* 4. background-attachment */
+    background-attachment: scroll;
+    /* fixed로 주면 기준이 뷰포트로 된다. */
+    background-attachment: fixed;
+}
+
+
+.box1{
+    width: 800px;
+    height: 500px;
+    background-color: aqua;
+    background-image: url('https://item.kakaocdn.net/do/d84248170c2c52303db27306a00fb861f604e7b0e6900f9ac53a43965300eb9a');
+}
+.background-image1{
+    background-repeat: repeat-x;
+    background-position: center;
+
+}
+
+.background-image2{
+    background-size: 100px 50px ;
+    background-size: contain;
+}
+
+.background-image3{
+    background-size: cover;
+    background-position: top left;
+}

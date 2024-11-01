@@ -1,0 +1,78 @@
+.parent{
+    position: relative;
+    width: 300px;
+    border: 3px;
+}
+
+.parent > .circle{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.eye{
+    position: relative;
+    width: 300px;
+    border: 3px;
+}
+
+.eye > .circle{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.eye > .circle1{
+    background-color: white;
+    left: 170px;
+    top: 20px;
+}
+.eye > .circle2{
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    left: 170px;
+    top: 35px;
+}
+
+.circle1{
+    background-color: #0000ff;
+    left: 150px;
+    top: 150px;
+    z-index: 1;
+}
+.circle2{
+    background-color: rgb(42, 57, 214);
+    left: 200px;
+    top: 200px;
+    z-index: 2;
+}
+.circle3{
+    background-color: #565fdc;
+    left: 260px;
+    top: 250px;
+    z-index: 3;
+}
+.circle4{
+    background-color: #5e60d8;
+    left: 300px;
+    top: 310px;
+    z-index: 3;
+}
+.circle5{
+    background-color: skyblue;
+    top: 350px;
+    left: 350px;
+    z-index: 5;
+}
+
+.glass{
+    background-image: url('../img/grass.png');
+    width: 1000px;
+    height: 140px;
+    position: relative;
+    z-index: 4;
+    top: 350px;
+}
