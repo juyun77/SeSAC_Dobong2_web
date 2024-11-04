@@ -1,0 +1,17 @@
+.text{
+    width: 150%;
+    font-size: 30px;
+    position: relative;
+    animation: flow 3s ease-in 1 forwards;
+}
+
+@keyframes flow{
+    from{
+        transform: translateX(100%);
+    }
+  
+    to{
+        transform: translateX(0);
+        width: 100%;
+    }     
+}

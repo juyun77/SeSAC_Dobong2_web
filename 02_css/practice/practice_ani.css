@@ -1,0 +1,27 @@
+.circle{
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(90deg,blue,skyblue);
+    border-radius: 50%;
+    position: absolute;
+    animation: around 5s linear infinite;
+}
+
+@keyframes around{
+    from, to{
+        top: 0px;
+        left: 0px;
+    }
+    25% {
+        top: 50px;
+        left: calc(100% - 150px);
+    }
+    50% {
+        top: calc(100% - 150px);
+        left: calc(100% - 150px);
+    }
+    75% {
+        top: calc(100% - 150px);
+        left: 0px;
+    }
+}

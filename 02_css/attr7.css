@@ -71,7 +71,6 @@
 
     /* 빨랐다가 느려지는 함수 */
     animation: bounce1 1s ease-out infinite alternate;
-
     /* 
     normal : from > to, from > to
     alternate: from > to, to > from 
@@ -87,6 +86,8 @@
         top: 0px;
     }
 }
+
+
 
 .bounce-ball2{
     width: 50px;
