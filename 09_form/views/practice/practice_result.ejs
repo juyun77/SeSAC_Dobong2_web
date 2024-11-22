@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습 결과 페이지</title>
+  </head>
+  <body>
+    <!-- 
+   userInfo= {
+  name: 'd',
+  gender: '여자',
+  year: '1980',
+  month: '1',
+  date: '1',
+  favorite: [ '패션', '음식' ]
+}
+    -->
+    <h1>실습문제 응답 페이지</h1>
+    <h3><%= userInfo.name %>님 환영합니다</h3>
+    <ul>
+      <li>성별:<%= userInfo.gender %></li>
+      <li>
+        생년월일:<%= userInfo.birthYear %>/<%= userInfo.birthMonth %>/<%=
+        userInfo.birthDay%>
+      </li>
+      <li>관심사: <%= userInfo.hobby %></li>
+    </ul>
+
+    <% if(addInfo){ %>
+    <p>좋아하는 색깔: <span class="color"><%=userInfo.color %></span></p>
+    <p>좋아하는 숫자: <%=userInfo.number %></p>
+    <p>좋아하는 색깔: <%=userInfo.comment %></p>
+    <% }%>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const colorSpan = document.querySelector(".color");
+        colorSpan.style.color = "<%=userInfo.color%>";
+      });
+    </script>
+  </body>
+</html>

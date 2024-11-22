@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습문제 1</title>
+    <style>
+      div {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>실습문제1</h1>
+    <h2>GET 요청</h2>
+    <form action="/getForm1" method="get">
+      <label> 이름 <input type="text" name="name" /> </label>
+      <br />
+      <fieldset>
+        <legend>성별</legend>
+        <label>
+          <input type="radio" name="gender" value="남자" />
+          남자
+        </label>
+        <label>
+          <input type="radio" name="gender" value="여자" />
+          여자
+        </label>
+    </fieldset>
+
+    <fieldset>
+        <legend>생년월일</legend>
+      <label for="birthYear">
+        <select id="birthYear" name="birthYear">
+            <option value="" disabled selected>년</option>
+            <% for(let i=1980; i<2010; i++) {%>
+            <option value="<%=i%>"><%=i%></option>
+            <% } %>
+          </select>
+        </select>
+        <span>년</span>
+      </label>
+
+      <label for="birthMonth">
+        <select id="birthMonth" name="birthMonth">
+          <option value="" disabled selected>월</option>
+          <% for(let i=0; i<12; i++) {%>
+          <option value="<%=i%>"><%=i%></option>
+          <% } %>
+        </select>
+        <span>월</span>
+      </label>
+
+      <label for="birthDay">
+        <select id="birthDay" name="birthDay">
+          <option value="" disabled selected>일</option>
+          <% for(let i=1; i<31; i++) {%>
+          <option value="<%=i%>"><%=i%></option>
+          <% } %>
+        </select>
+        <span>일</span>
+      </label>
+    </fieldset>
+   
+      <fieldset>
+        <legend>취미</legend>
+      <label>
+        <input type="checkbox" name="hobby" value="travel" />
+        여행
+      </label>
+      <label>
+        <input type="checkbox" name="hobby" value="fashion" />
+        패션
+      </label>
+      <label>
+        <input type="checkbox" name="hobby" value="food" />
+        음식
+      </label>
+    </fieldset>
+      <button type="submit">제출</button>
+    </form>
+  </body>
+</html>
