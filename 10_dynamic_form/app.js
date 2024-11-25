@@ -10,6 +10,9 @@ app.set("views", "./views");
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+const realId = "banana";
+const realPw = "4321";
+
 /* API */
 app.get("/", (req, res) => {
   res.render("index");
@@ -36,7 +39,7 @@ app.get("/axios", (req, res) => {
   console.log(req.query);
   res.send(req.query);
   /* 
-  {name:'allie', gender:'여성'}
+  {name:'juyun', gender:'여성'}
   */
 });
 
@@ -58,8 +61,38 @@ app.get("/fetch", (req, res) => {
 
 app.post("/fetch", (req, res) => {
   console.log(req.body);
-  //{ name: 'allie', gender: '여성' }
+  //{ name: 'juyun', gender: '여성' }
   res.send(req.body);
+});
+
+//외부 api 사용하기
+app.get("/api", (req, res) => {
+  res.render("api");
+});
+
+//practice1
+app.get("/practice1", (req, res) => {
+  res.render("practice1");
+});
+//practice2
+app.get("/practice2", (req, res) => {
+  res.render("practice2");
+});
+
+// /axios1 GET
+app.get("/axios1", (req, res) => {
+  console.log(req.query);
+  res.send(req.query);
+});
+
+// /axios1 POST
+app.post("/axios1", (req, res) => {
+  console.log(req.body);
+  if (req.body.userId === realId && req.body.userPw === realPw) {
+    res.send({ isSuccess: true, userId: req.body.userId });
+  } else {
+    res.send({ isSuccess: false });
+  }
 });
 
 app.listen(PORT, () => {

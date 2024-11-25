@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- axios CDN -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+
+    <h1>실습 1</h1>
+
+    <form name="register">
+        <label> 이름 <input type="text" name="name" /> </label>
+        <br />
+        <fieldset>
+          <legend>성별</legend>
+          <label>
+            <input type="radio" name="gender" value="남자" />
+            남자
+          </label>
+          <label>
+            <input type="radio" name="gender" value="여자" />
+            여자
+          </label>
+      </fieldset>
+  
+      <fieldset>
+          <legend>생년월일</legend>
+        <label for="birthYear">
+          <select id="birthYear" name="birthYear">
+              <option value="" disabled selected>년</option>
+              <% for(let i=1980; i<2010; i++) {%>
+              <option value="<%=i%>"><%=i%></option>
+              <% } %>
+            </select>
+          </select>
+          <span>년</span>
+        </label>
+  
+        <label for="birthMonth">
+          <select id="birthMonth" name="birthMonth">
+            <option value="" disabled selected>월</option>
+            <% for(let i=0; i<12; i++) {%>
+            <option value="<%=i%>"><%=i%></option>
+            <% } %>
+          </select>
+          <span>월</span>
+        </label>
+  
+        <label for="birthDay">
+          <select id="birthDay" name="birthDay">
+            <option value="" disabled selected>일</option>
+            <% for(let i=1; i<31; i++) {%>
+            <option value="<%=i%>"><%=i%></option>
+            <% } %>
+          </select>
+          <span>일</span>
+        </label>
+      </fieldset>
+     
+        <fieldset>
+          <legend>취미</legend>
+        <label>
+          <input type="checkbox" name="hobby" value="travel" />
+          여행
+        </label>
+        <label>
+          <input type="checkbox" name="hobby" value="fashion" />
+          패션
+        </label>
+        <label>
+          <input type="checkbox" name="hobby" value="food" />
+          음식
+        </label>
+      </fieldset>
+        <button type="button" onclick="axiosGet()">제출</button>
+      </form>
+
+      <div class="result"></div>
+
+
+      <script>
+        const resultBox = document.querySelector(".result");
+      
+        async function axiosGet() {
+          const form = document.forms["register"];
+          //새로운 배열을 만들고 선택된 값들을 넣는 방식으로 하는게 좋음.
+          const fav=[];
+          console.log(form.hobby)
+          for(let fa of form.hobby){
+            if(fa.checked){
+              console.log("fa값:",fa)
+              fav.push(fa.value)
+            }
+        }
+        console.log("fav배열:",fav)
+          const data = {
+            name: form.name.value,
+            hobby: fav
+          };
+  
+       // 1. then ~ catch 사용
+         axios({
+          method: "get",
+          url: "/axios1",
+          params: data, // get 요청일 때는 params에 담아서 요청
+        })
+          .then(function (response) {
+            // 통신에 성공했을 때
+            const {name, hobby}=response.data
+            console.log(response.data); // 서버에서 준 데이터
+            resultBox.textContent = `
+           ${name}님 환영합니다! 가입이 완료되었습니다. 취미는  ${hobby}`;
+            resultBox.style.color = "green";
+          })
+          .catch(function (err) {
+            // 통신에 실패했을 때
+            console.error("error!!!!!!!!!");
+            console.error(err);
+          }); 
+        }
+        
+      </script>
+  </body>
+</html>
