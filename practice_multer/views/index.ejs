@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form label {
+        display: flex;
+      }
+      form label span {
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>실습 파일 업로드</h1>
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <label for="id"><span>아이디</span></label>
+      <input type="text" id="id" name="id" placeholder="ID 작성해주세요" />
+
+      <label for="pw"><span>비밀번호</span></label>
+      <input type="password" id="pw" name="pw" />
+
+      <label for="name"> <span>이름</span> </label>
+      <input type="text" id="name" name="name" />
+
+      <label for="age"> <span>나이</span></label>
+      <input type="text" id="age" name="age" />
+
+      <label for="userfile"><span>프로필사진</span></label>
+      <input type="file" name="userfile" id="userfile" />
+
+      <button type="submit">회원가입</button>
+      <button type="reset">리셋</button>
+    </form>
+  </body>
+</html>

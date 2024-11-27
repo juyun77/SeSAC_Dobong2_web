@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      span {
+        color: blue;
+      }
+      label {
+        margin: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1><span><%= userInfo.name%></span>님 마이페이지</h1>
+      <img src="/<%= file.path%>" alt="" />
+      <br />
+
+      <label>아이디</label>
+      <%= userInfo.id%>
+      <br />
+
+      <label>비밀번호</label>
+      <%= userInfo.pw%>
+      <br />
+
+      <label>이름</label>
+      <%= userInfo.name%>
+      <br />
+
+      <label>나이</label>
+      <%= userInfo.age%>
+    </div>
+  </body>
+</html>
