@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인하기</title>
+
+    <!-- Axios CDN -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <style>
+      label {
+        display: flex;
+      }
+      label span {
+        width: 80px;
+      }
+      .login-result {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>로그인</h2>
+    <form name="login">
+      <label for="userId">
+        <span>아이디</span>
+        <input type="text" name="userId" id="userId" required />
+      </label>
+      <label for="userPw">
+        <span>비밀번호</span>
+        <input type="password" name="userPw" id="userPw" required />
+      </label>
+      <br />
+      <button type="button" onclick="clickLogin()">로그인</button>
+    </form>
+    <div class="login-result"></div>
+  </body>
+
+  <script>
+    function clickLogin() {
+      const form = document.forms["login"];
+      const loginResult = document.querySelector(".login-result");
+      const data = {
+        userId: form.userId.value,
+        userPw: form.userPw.value,
+      };
+
+      console.log(data);
+      console.log(form.userId.checkValidity());
+      console.log(form.userPw.checkValidity());
+      if (!form.userId.checkValidity() || !form.userPw.checkValidity()) {
+        loginResult.innerText = "아이디와 비밀번호는 필수입니다.";
+        return;
+      }
+
+      axios({
+        url: "/axios1",
+        method: "post",
+        data: data,
+      }).then((res) => {
+        console.log(res.data.isSuccess);
+        if (res.data.isSuccess) {
+          loginResult.textContent = "로그인 성공!!";
+        } else {
+          loginResult.textContent = "아이디 또는 패스워드 오류";
+        }
+      });
+    }
+  </script>
+</html>
