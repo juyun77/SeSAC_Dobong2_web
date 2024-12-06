@@ -141,7 +141,8 @@ LIMIT 3;
 
 
 ------------------실습문제---------------------------
-CREATE DATABASE dobong;
+
+CREATE DATABASE dobong CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE dobong;
 
 --- 실습 1번
@@ -333,3 +334,43 @@ WHERE gender='여'
 GROUP BY specialize 
 -- group화 된 테이블에 조건을 다는 것
 HAVING COUNT(specialize) >=2; 
+
+use sesac;
+
+CREATE TABLE visitor(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(10) NOT NULL,
+    comment MEDIUMTEXT
+);
+
+create table user(
+    id int AUTO_INCREMENT PRIMARY KEY,
+    userid VARCHAR(20) NOT NULL,
+    name VARCHAR(10) NOT NULL,
+    pw VARCHAR(20) NOT NULL
+);
+
+desc user;
+
+desc visitor;
+
+INSERT into visitor(name,comment) VALUES("홍길동","내가 왔다");
+INSERT into visitor(name,comment) VALUES("이찬혁","으라차차");
+
+select * from visitor;
+
+update visitor set comment="야호~~!!" where id=2;
+delete from visitor where id=3
+
+#############DCL
+---mysql 사용자 생성 
+CREATE USER 'sesac'@'%' IDENTIFIED BY '1111';
+--- 권한 부여
+GRANT ALL PRIVILEGES on *.* TO 'sesac'@'%' WITH GRANT OPTION;
+
+ALTER USER 'sesac'@'%' IDENTIFIED WITH mysql_native_password BY '1111';
+FLUSH PRIVILEGES;
+
+SELECT * from mysql.user;
+
+show GRANTS for 'sesac'@'%';

@@ -118,3 +118,4 @@ DROP USER 'user2'@'localhost';
 
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password
 by '1111'; ---mysql root 비밀번호 변경
+

@@ -1,0 +1,3 @@
+use SESAC;
+
+show tables;

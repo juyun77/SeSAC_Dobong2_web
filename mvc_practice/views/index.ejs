@@ -1,71 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>로그인하기</title>
-
-    <!-- Axios CDN -->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
+    <title>MVC 실습</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <style>
       label {
         display: flex;
       }
+
       label span {
-        width: 80px;
+        width: 90px;
       }
-      .login-result {
+
+      .success {
+        color: blue;
+        font-weight: 700;
+      }
+
+      .error {
         color: red;
+        font-weight: 700;
       }
     </style>
   </head>
   <body>
-    <h2>로그인</h2>
     <form name="login">
-      <label for="userId">
+      <label>
         <span>아이디</span>
-        <input type="text" name="userId" id="userId" required />
+        <input type="text" name="userId" required />
       </label>
-      <label for="userPw">
+      <label>
         <span>비밀번호</span>
-        <input type="password" name="userPw" id="userPw" required />
+        <input type="password" name="userPw" required />
       </label>
       <br />
-      <button type="button" onclick="clickLogin()">로그인</button>
+      <button type="button" onclick="clickLogin()">로그인1</button>
+      <button type="button" onclick="clickLogin2()">로그인2</button>
     </form>
-    <div class="login-result"></div>
-  </body>
+    <div class="result"></div>
+    <script>
+      const result = document.querySelector(".result");
+      function clickLogin() {
+        const form = document.forms["login"];
 
-  <script>
-    function clickLogin() {
-      const form = document.forms["login"];
-      const loginResult = document.querySelector(".login-result");
-      const data = {
-        userId: form.userId.value,
-        userPw: form.userPw.value,
-      };
+        const data = {
+          userId: form.userId.value,
+          userPw: form.userPw.value,
+        };
 
-      console.log(data);
-      console.log(form.userId.checkValidity());
-      console.log(form.userPw.checkValidity());
-      if (!form.userId.checkValidity() || !form.userPw.checkValidity()) {
-        loginResult.innerText = "아이디와 비밀번호는 필수입니다.";
-        return;
-      }
-
-      axios({
-        url: "/axios1",
-        method: "post",
-        data: data,
-      }).then((res) => {
-        console.log(res.data.isSuccess);
-        if (res.data.isSuccess) {
-          loginResult.textContent = "로그인 성공!!";
-        } else {
-          loginResult.textContent = "아이디 또는 패스워드 오류";
+        // console.log(data);
+        if (!form.userId.checkValidity() || !form.userPw.checkValidity()) {
+          result.textContent = "아이디와 비밀번호는 필수값입니다!!";
+          return;
         }
-      });
-    }
-  </script>
+
+        axios({
+          method: "post",
+          url: "/login1",
+          data: data,
+        })
+          .then((response) => {
+            console.log(response);
+            console.log(response.data);
+            if (response.data.isSuccess) {
+              result.textContent = "로그인 성공!";
+              result.classList.add("success");
+              result.classList.remove("error");
+            } else {
+              result.textContent = "로그인 실패!";
+              result.classList.add("error");
+              result.classList.remove("success");
+            }
+          })
+          .catch((err) => {
+            console.error("err!", err);
+          });
+      }
+      async function clickLogin2() {
+        try {
+          const form = document.forms["login"];
+          const data = {
+            userId: form.userId.value,
+            userPw: form.userPw.value,
+          };
+
+          const response = await axios({
+            method: "post",
+            url: "/login2",
+            data: data,
+          });
+
+          console.log(response);
+          if (response.data.isSuccess) {
+            result.textContent = `${response.data.userName}님 환영합니다!
+                로그인 성공`;
+            result.classList.add("success");
+            result.classList.remove("error");
+          } else {
+            result.textContent = "비밀번호가 틀렸습니다.";
+            result.classList.add("error");
+            result.classList.remove("success");
+          }
+        } catch (err) {
+          console.log("err", err);
+        }
+      }
+    </script>
+  </body>
 </html>

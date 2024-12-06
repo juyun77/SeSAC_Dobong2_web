@@ -16,13 +16,13 @@ exports.commentInfos = () => {
       id: 3,
       userid: "cocoa",
       date: "2024-09-23",
-      comment: "아무거나 쓰겠습니다...",
+      comment: "배고파요...",
     },
     {
       id: 4,
       userid: "donut",
       date: "2024-10-31",
-      comment: "곧 점심시간 이네요..",
+      comment: "맛있는거 먹고 싶습니다!",
     },
   ];
 };

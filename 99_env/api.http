@@ -1,0 +1,11 @@
+@server=http://localhost:8080
+
+GET {{server}}/
+
+POST{{server}}/text
+Content-Type: application/json; charset=UTF-8
+
+{
+    "name":"주윤",
+    ""
+}

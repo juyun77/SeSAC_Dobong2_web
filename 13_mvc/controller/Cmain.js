@@ -20,6 +20,7 @@ exports.comment = (req, res) => {
   console.log("commentId:", commentId); // 1,2,3,4
 
   console.log(comments[commentId - 1]); // 댓글 실제 정보
+
   if (commentId < 1 || commentId > comments.length) {
     res.render("404");
   }
