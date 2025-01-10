@@ -16,10 +16,26 @@ import HandlerEx2 from "./components/ex/HandlerEx2";
 import HandlerEx3 from "./components/ex/HandlerEx3";
 import ChangeObj from "./components/ex/ChangeObj";
 import HandlerEx4 from "./components/ex/HandlerEx4";
+import EntirePractice from "./components/practice/EntirePractice";
+import PropsMap from "./components/propsMap";
+import PropsMap2 from "./components/propsMap2";
+import Alphabet from "./components/Alphabet";
+import PracticeMap from "./components/practice/PracticeMap";
+import PracticeMap2 from "./components/practice/PracticeMap2";
 
 function App() {
+  const arr = [
+    { name: "peach", krPrice: 10000, number: 5 },
+    { name: "strawberry", krPrice: 15000, number: 5 },
+    { name: "pear", krPrice: 11000, number: 5 },
+    { name: "apple", krPrice: 12000, number: 5 },
+  ];
   return (
     <div>
+      {/* ctrl+space누르면 자동으로 import해줌.
+      <h2>실습문제 !!</h2>
+      <EntirePractice />
+
       <h3>클래스형 컴포넌트 props 사용해보기</h3>
       <ClassProps name="루피" color="pink" nickname="공주" />
 
@@ -61,7 +77,12 @@ function App() {
       <HandlerEx3 />
 
       <ChangeObj />
-      <HandlerEx4 />
+      <HandlerEx4 /> */}
+      {/* <PropsMap arr={arr} />
+      <PropsMap2 arr={arr} /> */}
+      <Alphabet />
+      {/* <PracticeMap /> */}
+      <PracticeMap2 />
     </div>
   );
 }
