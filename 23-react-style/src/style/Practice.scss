@@ -1,0 +1,139 @@
+@import "util";
+
+//practice1 번
+
+.larva {
+  position: relative;
+}
+
+.larva .eye-white {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  top: 20px;
+  left: 10px;
+  position: absolute;
+  background-color: white;
+}
+.larva .eye-black {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: black;
+}
+.larva .body {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+}
+.larva .body.body1 {
+  top: 100px;
+  left: 100px;
+  background-color: rgb(0, 0, 166);
+}
+.larva .body.body2 {
+  top: 150px;
+  left: 160px;
+  background-color: rgb(36, 61, 206);
+}
+.larva .body.body3 {
+  top: 190px;
+  left: 200px;
+  background-color: rgb(52, 118, 231);
+}
+.larva .body.body4 {
+  top: 240px;
+  left: 220px;
+  background-color: rgb(47, 146, 233);
+}
+.larva .body.body5 {
+  top: 280px;
+  left: 280px;
+  background-color: rgb(140, 191, 253);
+  z-index: 10;
+}
+.larva .grass {
+  position: absolute;
+  top: 260px;
+  left: 0;
+}
+
+.grass {
+  width: 700px;
+  height: 200px;
+}
+
+//practice 2번
+.container1 {
+  $circleBgColors: (pink, yellow, blue);
+  .circle {
+    @each $el in $circleBgColors {
+      $index: index($circleBgColors, $el);
+      &:nth-child(#{$index}) {
+        @include circleMove($el, 10px * $index);
+      }
+    }
+  }
+}
+
+///practice3번
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+}
+
+.PostList header {
+  background-color: $color-primary;
+  color: $color-white;
+  text-shadow: 2px 2px 4px $shadow-black;
+  height: $height-header;
+  line-height: $height-header;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.PostItem {
+  text-align: left;
+  width: 50%;
+  background-color: $color-white;
+  box-shadow: 4px 4px 10px $shadow-black;
+  border-radius: 10px;
+  padding: 20px 30px;
+  margin: 40px auto;
+}
+
+.PostItem .id {
+  font-weight: 500;
+  margin-right: 8px;
+  color: $color-primary;
+}
+
+.PostItem .title {
+  color: rgb(123, 123, 123);
+}
+
+.PostItem .body {
+  font-size: 20px;
+}
+
+.PostItem:hover {
+  cursor: pointer;
+  transform: translateY(-10px);
+  transition: transform 0.4s;
+}
+
+.PostItem:hover .id,
+.PostItem:hover .title {
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .PostItem {
+    width: 90vw;
+  }
+}

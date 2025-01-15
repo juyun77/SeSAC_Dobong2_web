@@ -1,0 +1,85 @@
+//부분 파일은 _로 시작
+
+$color-red: #d04848;
+$color-orange: #f3b95f;
+$color-yellow: #fde767;
+$color-green: #96ceb4;
+$color-blue: #6895d2;
+
+$boxShadow: 2px 2px 6px #0000004d;
+
+@mixin box {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+@mixin circle($circleColor, $circleOpacity) {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid black;
+  display: inline-block;
+  background-color: $circleColor;
+  opacity: $circleOpacity;
+}
+
+@mixin box2(
+  $squareBgColor: $color-red,
+  $squareFontSize: 15px,
+  $squareColor: gray
+) {
+  @include box();
+  background-color: $squareBgColor;
+  line-height: 100px;
+  text-align: center;
+  font-size: $squareFontSize;
+  color: $squareColor;
+  @if $squareBgColor==$color-red {
+    border-radius: 50%;
+  } @else if $squareColor==black {
+    border-radius: 25%;
+  } @else {
+    border-radius: 0;
+  }
+}
+
+// Practice2
+@mixin circleMove($circleColor, $d) {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: $circleColor;
+  position: absolute;
+  top: $d;
+  left: 0;
+
+  animation: move-#{$d} 1s infinite ease-in-out;
+
+  @keyframes move-#{$d} {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translateX($d);
+    }
+    50% {
+      transform: translate($d, $d);
+    }
+    75% {
+      transform: translate(0, $d);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+}
+
+///practice3
+$height-header: 80px;
+$color-primary: rgb(119, 164, 255);
+$color-secondary: rgb(123, 123, 123);
+$color-white: rgb(243, 247, 255);
+$shadow-black: rgba(0, 0, 0, 0.15);
